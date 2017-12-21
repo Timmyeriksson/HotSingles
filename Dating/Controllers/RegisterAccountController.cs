@@ -30,10 +30,10 @@ namespace Dating.Controllers
                     Firstname = model.Firstname,
                     Lastname = model.Lastname,
                     Email = model.Email,
-                    Password= model.Password,
+                    Password = model.Password,
                     Age = model.Age,
                     Gender = model.Gender,
-                    PictureURL = model.PictureURL,
+                    PictureURL = "https://pbs.twimg.com/profile_images/1724449330/stick_man_by_minimoko94-d2zvfn8.png",
                     Searchable = model.Searchable
 
                 };

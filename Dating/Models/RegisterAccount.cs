@@ -30,9 +30,6 @@ namespace Dating.Models
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 
-        [Display(Name = "Profile Picture")]
-        public string PictureURL { get; set; }
-
         [Required]
         [Display(Name = "Searchable profile")]
         public string Searchable { get; set; }
