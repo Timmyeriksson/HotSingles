@@ -1,0 +1,74 @@
+﻿@model Datalayer.Entities.User
+
+@{
+    string profilepictureurl = "";
+    profilepictureurl = Model.PictureURL;
+    int Sender = Convert.ToInt32(Session["USER_ID"]);
+}
+
+<h2>My Profile</h2>
+<div class="profilecontainer">
+    <div class="wallcontainer2">
+        <dl class="dl-horizontal">
+            <dd>
+                <img src=@profilepictureurl width="260" height="260" />
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Firstname, "Firstname:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Lastname, "Lastname:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lastname)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Gender, "Gender:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Age, "Age:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+        </dl>
+
+    </div>
+    @*<div class="wallcontainer">
+        <div class="walldiv">
+            Skriv ett inlägg:
+            <br />
+            <textarea id="Content" rows="3" cols="500"></textarea><br />
+            <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
+        </div>
+        <br />
+        <div class="walldiv">
+            Inlägg:
+            <ul>
+                @foreach (var post in ViewBag.list)
+                {
+                    <li>
+                        <B>@post[0]</B>
+                        <br />
+                        @post[1]
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>*@
+</div>
+

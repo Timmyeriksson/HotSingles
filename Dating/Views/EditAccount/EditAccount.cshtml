@@ -1,0 +1,99 @@
+﻿@model Dating.Models.editwrapper
+@{
+    ViewBag.Title = "Edit account";
+}
+
+
+<h1>@User.Identity.Name</h1>
+<h2>@ViewBag.Title</h2>
+
+
+@Html.AntiForgeryToken()
+<h4>Enter new information to update your account</h4>
+<hr />
+
+@using (Html.BeginForm("EditMail", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.mailen.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.mailen.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.mailen.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("EditPassword", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.PasswordFor(m => m.Password.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("EditAge", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age.Age, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.Age.Age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Age.Age, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("EditProfilePic", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProfileURL.ProfileURL, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.ProfileURL.ProfileURL, new { @class = "form-control" })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("EditSearchable", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Searchable.Searchable, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.DropDownListFor(model => model.Searchable.Searchable, new List<SelectListItem> { new SelectListItem { Text = "Yes", Value = "Yes", Selected = true }, new SelectListItem { Text = "No", Value = "No" } })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("EditAbout", "EditAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.About.About, new { @class = "col-md-2 control-label" })
+        <div class="col-md-4">
+            @Html.TextAreaFor(m => m.About.About, new { @class = "form-control stork" })
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Update" />
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
