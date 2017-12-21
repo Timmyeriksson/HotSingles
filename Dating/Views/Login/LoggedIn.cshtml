@@ -3,7 +3,6 @@
 @{
     string profilepictureurl = "";
     profilepictureurl = Model.PictureURL;
-    int Sender = Convert.ToInt32(Session["USER_ID"]);
 }
 
 <h2>My Profile</h2>
@@ -11,7 +10,7 @@
     <div class="wallcontainer2">
         <dl class="dl-horizontal">
             <dd>
-                <img src=@profilepictureurl width="260" height="260" />
+                <img src=@profilepictureurl width="150" height="150" />
             </dd>
             <dt>
                 @Html.LabelFor(model => model.Firstname, "Firstname:")
@@ -49,26 +48,26 @@
 
     </div>
     @*<div class="wallcontainer">
-        <div class="walldiv">
-            Skriv ett inlägg:
+            <div class="walldiv">
+                Skriv ett inlägg:
+                <br />
+                <textarea id="Content" rows="3" cols="500"></textarea><br />
+                <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
+            </div>
             <br />
-            <textarea id="Content" rows="3" cols="500"></textarea><br />
-            <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
-        </div>
-        <br />
-        <div class="walldiv">
-            Inlägg:
-            <ul>
-                @foreach (var post in ViewBag.list)
-                {
-                    <li>
-                        <B>@post[0]</B>
-                        <br />
-                        @post[1]
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>*@
+            <div class="walldiv">
+                Inlägg:
+                <ul>
+                    @foreach (var post in ViewBag.list)
+                    {
+                        <li>
+                            <B>@post[0]</B>
+                            <br />
+                            @post[1]
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>*@
 </div>
 
