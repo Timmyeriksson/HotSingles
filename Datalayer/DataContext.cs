@@ -12,8 +12,7 @@ namespace Datalayer
 {
     public class Datacontext : DbContext
     {
-
-
         public DbSet<User> Users { get; set; }
+        public DbSet<FriendEntity> Friends { get; set; }
     }
 }

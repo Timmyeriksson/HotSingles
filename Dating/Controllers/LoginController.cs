@@ -33,6 +33,7 @@ namespace Dating.Controllers
             return View("LoggedIn");
         }
 
+
         public ActionResult Login()
         {
             if (Session["UsedID"] != null)
@@ -44,6 +45,7 @@ namespace Dating.Controllers
                 return RedirectToAction("Login");
             }
         }
+        
 
         public ActionResult LoggedIn()
         {

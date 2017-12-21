@@ -42,3 +42,14 @@ C:\Users\Timmy\Desktop\vemskrivermedtvap\Datalayer\obj\Debug\Datalayer.csprojRes
 C:\Users\Timmy\Desktop\vemskrivermedtvap\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
 C:\Users\Timmy\Desktop\vemskrivermedtvap\Datalayer\obj\Debug\Datalayer.dll
 C:\Users\Timmy\Desktop\vemskrivermedtvap\Datalayer\obj\Debug\Datalayer.pdb
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.dll.config
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.pdb
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csprojResolveAssemblyReference.cache
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.pdb
