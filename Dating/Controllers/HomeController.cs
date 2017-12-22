@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Datalayer;
+using Datalayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,7 +13,23 @@ namespace Dating.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (Datacontext db = new Datacontext())
+            {
+                List<User> randomListan()
+                {
+
+                    var list = new List<User>();
+                    var randomUser = db.Users.OrderBy(x => Guid.NewGuid()).ToList();
+
+                    list.Add(randomUser[0]);
+                    list.Add(randomUser[1]);
+                    list.Add(randomUser[2]);
+
+
+                    return list;
+                }
+                return View(randomListan());
+            }
         }
 
         public ActionResult About()
