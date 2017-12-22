@@ -21,7 +21,14 @@ namespace Dating.Controllers
                 {
                     var userList = new List<User>();
 
-                    userList = db.Users.ToList();
+                    var searchabletrue = from m in db.Users
+                                         where m.Searchable == true
+                                         select m;
+
+                    foreach (User user in searchabletrue)
+                    {
+                        userList.Add(user);
+                    }
 
                     return View(userList);
                 }
@@ -30,21 +37,21 @@ namespace Dating.Controllers
 
         }
 
-        //public ActionResult Filter(string searchString)
+        //public ActionResult Search(string searchString, User model)
 
         //{
         //    using (Datacontext db = new Datacontext())
         //    {
         //        var userstring = from m in db.Users
-        //                         where m.Searchable.Equals("Yes")
+        //                         where m.Searchable == true
         //                         select m;
 
-        //        if (!String.IsNullOrEmpty(searchString))
+        //        if (!string.IsNullOrEmpty(searchString))
         //        {
-        //            userstring = userstring.Where(s => s.Firstname.Contains(searchString) || s.Lastname.Contains(searchString));
+        //            userstring = userstring.Where(s => s.Firstname.Contains(searchString));
         //        }
 
-        //        return View();
+        //        return View(userstring);
         //    }
 
         //}

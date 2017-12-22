@@ -72,7 +72,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Searchable.Searchable, new { @class = "col-md-2 control-label" })
         <div class="col-md-4">
-            @Html.DropDownListFor(model => model.Searchable.Searchable, new List<SelectListItem> { new SelectListItem { Text = "Yes", Value = "Yes", Selected = true }, new SelectListItem { Text = "No", Value = "No" } })
+            @Html.DropDownListFor(model => model.Searchable.Searchable, new List<SelectListItem> { new SelectListItem { Text = "Yes", Value = true.ToString(), Selected = true }, new SelectListItem { Text = "No", Value = false.ToString() } })
         </div>
         <div class="col-md-2">
             <input type="submit" class="btn btn-default" value="Update" />
