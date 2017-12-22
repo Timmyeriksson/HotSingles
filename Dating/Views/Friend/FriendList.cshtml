@@ -6,3 +6,8 @@
 
 <h2>HÄR ÄR DIN FUCKING KOMPISLISTA, OSCAR!</h2>
 
+@using (Html.BeginForm("SearchFriend", "Friend", FormMethod.Get, null))
+{
+    <p>Search Friend:</p><input type="text" name="SearchString" />
+    <input type="submit" />
+}

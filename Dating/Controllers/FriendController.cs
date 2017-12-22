@@ -16,6 +16,13 @@ namespace Dating.Controllers
             return View();
         }
 
+        // GET: Friend
+        public ActionResult FriendList()
+        {
+            return View();
+        }
+
+
         public ActionResult Friends()
         {
             if (Session["UserID"] != null)
@@ -53,9 +60,27 @@ namespace Dating.Controllers
 
         }
 
-        public ActionResult FriendList()
+        //search for a friend by firstname
+        public ActionResult SearchFriend(string searchString)
+
         {
-            return View();
+
+            using (Datacontext db = new Datacontext())
+            {
+                var friend = from m in db.Users
+                             where m.Searchable.Equals("yes")
+                             select m;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    friend = friend.Where(s => s.Firstname.Contains(searchString));
+                }
+
+                return RedirectToAction("FriendList");
+            }
+
+
+
         }
     }
 }
