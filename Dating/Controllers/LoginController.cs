@@ -45,7 +45,7 @@ namespace Dating.Controllers
                 return RedirectToAction("Login");
             }
         }
-        
+
 
         public ActionResult LoggedIn()
         {
@@ -59,9 +59,14 @@ namespace Dating.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult LogOut()
+        {
             Session.Abandon();
             Session.Remove("UserID");
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult LogInView()
         {

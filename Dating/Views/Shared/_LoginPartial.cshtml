@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-@if (Session["UserID"] != null)
+﻿@if (Session["UserID"] != null)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
@@ -10,7 +9,7 @@
                 @Html.ActionLink("Settings", "EditAccount", "EditAccount", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
             <li>
-                @Html.ActionLink("Log Out", "Index", "Login", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink("Log Out", "LogOut", "Login", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
         </ul>
     }
