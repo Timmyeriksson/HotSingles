@@ -17,6 +17,6 @@ namespace Datalayer.Entities
         public string About { get; set; }
         public string Gender { get; set; }
         public string PictureURL { get; set; }
-        public string Searchable { get; set; }
+        public bool Searchable { get; set; }
     }
 }

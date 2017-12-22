@@ -47,7 +47,7 @@ namespace Dating.Models
     public class EditSearchable
     {
         [Display(Name = "Searchable Profile")]
-        public string Searchable { get; set; }
+        public bool Searchable { get; set; }
     }
 
     public class editwrapper

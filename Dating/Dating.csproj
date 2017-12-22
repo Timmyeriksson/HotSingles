@@ -271,6 +271,7 @@
     <Content Include="Views\EditAccount\EditAccount.cshtml" />
     <Content Include="Views\Login\IndexLoggedOut.cshtml" />
     <Content Include="Views\Friend\FriendList.cshtml" />
+    <Content Include="Views\Friend\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
