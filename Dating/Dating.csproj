@@ -274,6 +274,7 @@
     <Content Include="Views\Friend\FriendList.cshtml" />
     <Content Include="Views\Friend\Friends.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Search\Filter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

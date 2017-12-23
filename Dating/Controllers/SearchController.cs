@@ -37,23 +37,31 @@ namespace Dating.Controllers
 
         }
 
-        //public ActionResult Search(string searchString, User model)
+        public ActionResult Filter(string searchString)
+        {
+            if (Session["UserID"] != null)
+            {
+                int currentUser = Convert.ToInt32(Session["UserID"]);
+                //Lista här? eller nedan
+                using (Datacontext db = new Datacontext())
+                {
+                    //kan behövas instansieras en lista här på något sätt?
+                    var userstring = from m in db.Users
+                                     where m.Searchable == true
+                                     select m;
+                    if (!string.IsNullOrEmpty(searchString))
+                    {
+                        {
+                            userstring = userstring.Where(s => s.Firstname.Contains(searchString));
+                        }
+                        //vid debugging ligger resultaten tydligt i userstring variabeln. men får dem ej vidare därifrån. 
+                        //jämför med lista alla så ser man att allt hänger med där rätt smidigt.
+                        return View(userstring);
 
-        //{
-        //    using (Datacontext db = new Datacontext())
-        //    {
-        //        var userstring = from m in db.Users
-        //                         where m.Searchable == true
-        //                         select m;
-
-        //        if (!string.IsNullOrEmpty(searchString))
-        //        {
-        //            userstring = userstring.Where(s => s.Firstname.Contains(searchString));
-        //        }
-
-        //        return View(userstring);
-        //    }
-
-        //}
+                    }
+                }
+            }
+            return View();
+        }
     }
 }
