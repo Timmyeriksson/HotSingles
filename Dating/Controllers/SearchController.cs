@@ -12,7 +12,7 @@ namespace Dating.Controllers
     {
         // GET: Search
 
-        public ActionResult Search()
+        public ActionResult Search(string searchString)
         {
             if (Session["UserID"] != null)
             {
@@ -21,13 +21,28 @@ namespace Dating.Controllers
                 {
                     var userList = new List<User>();
 
-                    var searchabletrue = from m in db.Users
-                                         where m.Searchable == true
-                                         select m;
-
-                    foreach (User user in searchabletrue)
+                    if (searchString == null)
                     {
-                        userList.Add(user);
+                        var searchabletrue = from m in db.Users
+                                             where m.Searchable == true
+                                             select m;
+                        foreach (User user in searchabletrue)
+                        {
+                            userList.Add(user);
+                        }
+                    }
+                    else
+                    {
+                        var searchabletrue = from m in db.Users
+                                             where m.Searchable == true
+                                             && (m.Firstname.Contains(searchString)
+                                             || m.Lastname.Contains(searchString))
+                                             select m;
+
+                        foreach (User user in searchabletrue)
+                        {
+                            userList.Add(user);
+                        }
                     }
 
                     return View(userList);
@@ -35,33 +50,6 @@ namespace Dating.Controllers
             }
             return RedirectToAction("Index");
 
-        }
-
-        public ActionResult Filter(string searchString)
-        {
-            if (Session["UserID"] != null)
-            {
-                int currentUser = Convert.ToInt32(Session["UserID"]);
-                //Lista här? eller nedan
-                using (Datacontext db = new Datacontext())
-                {
-                    //kan behövas instansieras en lista här på något sätt?
-                    var userstring = from m in db.Users
-                                     where m.Searchable == true
-                                     select m;
-                    if (!string.IsNullOrEmpty(searchString))
-                    {
-                        {
-                            userstring = userstring.Where(s => s.Firstname.Contains(searchString));
-                        }
-                        //vid debugging ligger resultaten tydligt i userstring variabeln. men får dem ej vidare därifrån. 
-                        //jämför med lista alla så ser man att allt hänger med där rätt smidigt.
-                        return View(userstring);
-
-                    }
-                }
-            }
-            return View();
         }
     }
 }
