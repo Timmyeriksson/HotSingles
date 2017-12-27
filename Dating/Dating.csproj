@@ -271,7 +271,6 @@
     <Content Include="Views\Login\LoggedIn.cshtml" />
     <Content Include="Views\EditAccount\EditAccount.cshtml" />
     <Content Include="Views\Login\IndexLoggedOut.cshtml" />
-    <Content Include="Views\Friend\FriendList.cshtml" />
     <Content Include="Views\Friend\Friends.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Friend\FriendProfile.cshtml" />
