@@ -11,6 +11,7 @@ namespace Dating.Controllers
 {
     public class HomeController : Controller
     {
+        [HandleError]
         public ActionResult Index()
         {
             using (Datacontext db = new Datacontext())

@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomErrorController.cs" />
     <Compile Include="Controllers\EditAccountController.cs" />
     <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -274,6 +275,7 @@
     <Content Include="Views\Friend\Friends.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Friend\FriendProfile.cshtml" />
+    <Content Include="Views\CustomError\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

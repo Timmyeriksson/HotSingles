@@ -64,3 +64,14 @@ C:\Users\Timmy\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csprojR
 C:\Users\Timmy\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
 C:\Users\Timmy\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.dll
 C:\Users\Timmy\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.pdb
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.dll.config
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\Datalayer.pdb
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.xml
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csprojResolveAssemblyReference.cache
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Datalayer\obj\Debug\Datalayer.pdb
