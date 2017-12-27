@@ -82,21 +82,32 @@ namespace Dating.Controllers
 
         public ActionResult FriendProfile(int? id)
         {
+
             if (Session["UserID"] != null)
             {
                 int currentUser = Convert.ToInt32(Session["UserID"]);
                 int userid = Convert.ToInt32(id);
-                using (Datacontext db = new Datacontext())
+
+                if (currentUser == userid)
                 {
-                    User user = db.Users.Find(id);
-                    if (user == null)
+                    return RedirectToAction("LoggedIn", "Login");
+                }
+                else
+                {
+
+
+
+                    using (Datacontext db = new Datacontext())
                     {
-                        return HttpNotFound();
+                        User user = db.Users.Find(id);
+                        if (user == null)
+                        {
+                            return HttpNotFound();
+                        }
+
+                        ViewBag.ProfilId = userid;
+                        return View(user);
                     }
-
-                    ViewBag.ProfilId = userid;
-                    return View(user);
-
                 }
             }
             else
