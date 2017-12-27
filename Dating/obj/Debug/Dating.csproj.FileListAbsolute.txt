@@ -664,3 +664,8 @@ C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csprojResolve
 C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.dll
 C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.pdb
+C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\bin\sv\Dating.resources.dll
+C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.resources
+C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.sv.resources
+C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csproj.GenerateResource.Cache
+C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\sv\Dating.resources.dll

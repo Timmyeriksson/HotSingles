@@ -23,9 +23,10 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Profile", "LoggedIn", "Login")</li>
-                        <li>@Html.ActionLink("Friends", "Friends", "Friend")</li>
-                        <li>@Html.ActionLink("Search", "Search", "Search")</li>
+                        <li>@Html.ActionLink(Dating.Resources.Navbar.Profile, "LoggedIn", "Login")</li>
+                        <li>@Html.ActionLink(Dating.Resources.Navbar.Friends, "Friends", "Friend")</li>
+                        <li>@Html.ActionLink(Dating.Resources.Navbar.Search, "Search", "Search")</li>
+                        <li>@Html.ActionLink(Dating.Resources.Navbar.Language, "Index", "Language")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
