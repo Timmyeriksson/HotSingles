@@ -78,9 +78,31 @@ namespace Dating.Controllers
 
                 return RedirectToAction("FriendList");
             }
+        }
 
+        public ActionResult FriendProfile(int? id)
+        {
+            if (Session["UserID"] != null)
+            {
+                int currentUser = Convert.ToInt32(Session["UserID"]);
+                int userid = Convert.ToInt32(id);
+                using (Datacontext db = new Datacontext())
+                {
+                    User user = db.Users.Find(id);
+                    if (user == null)
+                    {
+                        return HttpNotFound();
+                    }
 
+                    ViewBag.ProfilId = userid;
+                    return View(user);
 
+                }
+            }
+            else
+            {
+                return RedirectToAction("LoginView", "Login");
+            }
         }
     }
 }

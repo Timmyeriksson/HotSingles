@@ -1,0 +1,61 @@
+﻿@model Datalayer.Entities.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Profile";
+    int friend = ViewBag.ProfilID;
+    string profilepictureUrl = "";
+    profilepictureUrl = Model.PictureURL;
+
+}
+
+
+
+
+
+<h2>@Model.Firstname @Model.Lastname</h2>
+<div class="profilecontainer">
+    <div class="wallcontainer2">
+        <dl class="dl-horizontal">
+            <dd>
+                <img src=@profilepictureUrl width="150" height="150" />
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Firstname, "Firstname:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Lastname, "Lastname:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lastname)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Gender, "Gender:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Age, "Age:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.About, "About:")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.About)
+            </dd>
+        </dl>
+
+    </div>
