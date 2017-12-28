@@ -288,6 +288,8 @@
     <Content Include="Views\Friend\FriendProfile.cshtml" />
     <Content Include="Views\CustomError\PageNotFound.cshtml" />
     <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\CustomError\InternalServerError.cshtml" />
+    <Content Include="Views\CustomError\UnspecifiedError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

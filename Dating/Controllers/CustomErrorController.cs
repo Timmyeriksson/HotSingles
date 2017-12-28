@@ -18,5 +18,16 @@ namespace Dating.Controllers
         {
             return View();
         }
+
+        public ActionResult InternalServerError()
+
+        {
+            return View();
+        }
+
+        public ActionResult UnspecifiedError()
+        {
+            return View();
+        }
     }
 }
