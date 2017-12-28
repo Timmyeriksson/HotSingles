@@ -1,4 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using Datalayer.Entities;
+@{
+    var currentUser = Convert.ToInt32(Session["UserID"]);
+    var pending = ViewBag.MyPendings;
+    bool HasRequest = false;
+    if (pending != null)
+    {
+        foreach (Friend friend in pending)
+        {
+            if (friend.Friend2 == currentUser)
+            {
+                HasRequest = true;
+            }
+        }
+    }
+
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,6 +44,14 @@
                         <li>@Html.ActionLink(Dating.Resources.Navbar.Friends, "Friends", "Friend")</li>
                         <li>@Html.ActionLink(Dating.Resources.Navbar.Search, "Search", "Search")</li>
                         <li>@Html.ActionLink(Dating.Resources.Navbar.Language, "Index", "Language")</li>
+                        @if (HasRequest)
+                        {
+                            <li>
+                                <a href="@Url.Action("FriendRequests", "Friend")">
+                                    <img class="img-responsive" src="@Url.Content("~/Content/quest.PNG")" Style="height: 25px" />
+                                </a>
+                            </li>
+                        }
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>

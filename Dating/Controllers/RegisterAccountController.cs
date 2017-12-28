@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class RegisterAccountController : Controller
+    public class RegisterAccountController : StartController
     {
 
         private Repository databas = new Repository();
@@ -47,9 +47,6 @@ namespace Dating.Controllers
 
                 throw;
             }
-
-
-            return View();
         }
     }
 }

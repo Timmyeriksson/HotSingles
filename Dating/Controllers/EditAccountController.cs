@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class EditAccountController : Controller
+    public class EditAccountController : StartController
     {
         // GET: EditAccount
         public ActionResult EditAccount()

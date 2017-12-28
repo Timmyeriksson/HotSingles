@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : StartController
     {
         [HandleError]
         public ActionResult Index()

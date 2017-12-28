@@ -8,7 +8,7 @@ using Datalayer.Entities;
 
 namespace Dating.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : StartController
     {
         [HttpPost]
         public ActionResult Login(User user)

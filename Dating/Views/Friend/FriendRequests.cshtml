@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Datalayer.Entities.User>
+
+@{
+    ViewBag.Title = "Friends";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>These are your active friendrequests</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                <a href="@Url.Action("FriendProfile", "Friend", new { id = item.Id })">
+                    <p>Visit Profile</p>
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("AcceptFriend", "Friend", new { id = item.Id })">
+                    <p>Accept</p>
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("DeclineFriend", "Friend", new { id = item.Id })">
+                    <p>Decline</p>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class SearchController : Controller
+    public class SearchController : StartController
     {
         // GET: Search
 

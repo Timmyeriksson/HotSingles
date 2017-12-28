@@ -2,9 +2,9 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Profile";
-    int friend = ViewBag.ProfilID;
     string profilepictureUrl = "";
     profilepictureUrl = Model.PictureURL;
+    bool IsFriends = ViewBag.IsFriends;
 
 }
 
@@ -57,5 +57,9 @@
                 @Html.DisplayFor(model => model.About)
             </dd>
         </dl>
-
+        @if (IsFriends == false)
+        {
+            @Html.ActionLink("Add friend", "AddFriend", new { id = Model.Id }, null)
+        }
     </div>
+</div>

@@ -8,8 +8,9 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class FriendController : Controller
+    public class FriendController : StartController
     {
+
         // GET: Friend
         public ActionResult Index()
         {
@@ -17,10 +18,6 @@ namespace Dating.Controllers
         }
 
         // GET: Friend
-        public ActionResult FriendList()
-        {
-            return View();
-        }
 
 
         public ActionResult Friends()
@@ -60,26 +57,6 @@ namespace Dating.Controllers
 
         }
 
-        //search for a friend by firstname
-        public ActionResult SearchFriend(string searchString)
-
-        {
-
-            using (Datacontext db = new Datacontext())
-            {
-                var friend = from m in db.Users
-                             where m.Searchable.Equals("yes")
-                             select m;
-
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    friend = friend.Where(s => s.Firstname.Contains(searchString));
-                }
-
-                return RedirectToAction("FriendList");
-            }
-        }
-
         public ActionResult FriendProfile(int? id)
         {
 
@@ -104,7 +81,11 @@ namespace Dating.Controllers
                         {
                             return HttpNotFound();
                         }
-
+                        ViewBag.IsFriends = false;
+                        if (IsFriends(currentUser, userid))
+                        {
+                            ViewBag.IsFriends = true;
+                        }
                         ViewBag.ProfilId = userid;
                         return View(user);
                     }
@@ -113,6 +94,128 @@ namespace Dating.Controllers
             else
             {
                 return RedirectToAction("LoginView", "Login");
+            }
+        }
+
+        public bool IsFriends(int id1, int id2)
+        {
+            using (Datacontext db = new Datacontext())
+            {
+                var allFriends = db.Friends.ToList();
+                foreach (Friend friend in allFriends)
+                {
+                    if ((friend.Friend1 == id1 && friend.Friend2 == id2) || (friend.Friend2 == id1 && friend.Friend1 == id2))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public ActionResult AddFriend(int id)
+        {
+            using (Datacontext db = new Datacontext())
+            {
+                Friend friend = new Friend();
+                friend.Friend1 = Convert.ToInt32(Session["UserID"]);
+                friend.Friend2 = id;
+                friend.Accepted = false;
+                db.Friends.Add(friend);
+                db.SaveChanges();
+                return RedirectToAction("FriendProfile", new { id = id });
+            }
+        }
+
+        public ActionResult FriendRequests()
+        {
+            if (Session["UserID"] != null)
+            {
+                int currentUser = Convert.ToInt32(Session["UserID"]);
+                using (Datacontext db = new Datacontext())
+                {
+                    var AllFriendConnections = db.Friends.ToList();
+                    var PendingFriends = new List<Friend>();
+                    foreach (Friend friend in AllFriendConnections)
+                    {
+                        if (friend.Accepted == false)
+                        {
+                            PendingFriends.Add(friend);
+                        }
+                    }
+                    var PendingForUser = new List<User>();
+
+                    var UserList = db.Users.ToList();
+
+                    foreach (User user in UserList)
+                    {
+                        foreach (Friend friend in PendingFriends)
+                        {
+                            if ((user.Id == friend.Friend1 && currentUser == friend.Friend2) || (currentUser == friend.Friend1 && user.Id == friend.Friend2))
+                            {
+                                PendingForUser.Add(user);
+                            }
+                        }
+                    }
+                    return View(PendingForUser);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult AcceptFriend(int id)
+        {
+            var requester = id;
+            var currentUser = Convert.ToInt32(Session["UserID"]);
+            using (Datacontext db = new Datacontext())
+            {
+                var AllFriendConnections = db.Friends.ToList();
+                var PendingFriends = new List<Friend>();
+                foreach (Friend friend in AllFriendConnections)
+                {
+                    if (friend.Accepted == false)
+                    {
+                        PendingFriends.Add(friend);
+                    }
+                }
+                foreach (Friend friend in PendingFriends)
+                {
+                    if (friend.Friend1 == id && friend.Friend2 == currentUser)
+                    {
+                        friend.Accepted = true;
+                    }
+                }
+
+                db.SaveChanges();
+                return RedirectToAction("Friends");
+            }
+        }
+
+        public ActionResult DeclineFriend(int id)
+        {
+            var requester = id;
+            var currentUser = Convert.ToInt32(Session["UserID"]);
+            using (Datacontext db = new Datacontext())
+            {
+                var AllFriendConnections = db.Friends.ToList();
+                var PendingFriends = new List<Friend>();
+                foreach (Friend friend in AllFriendConnections)
+                {
+                    if (friend.Accepted == false)
+                    {
+                        PendingFriends.Add(friend);
+                    }
+                }
+                foreach (Friend friend in PendingFriends)
+                {
+                    if (friend.Friend1 == id && friend.Friend2 == currentUser)
+                    {
+                        db.Friends.Remove(friend);
+                    }
+                }
+
+                db.SaveChanges();
+                return RedirectToAction("Friends");
             }
         }
     }

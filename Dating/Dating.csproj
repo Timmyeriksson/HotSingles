@@ -199,6 +199,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RegisterAccountController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,9 +291,11 @@
     <Content Include="Views\Language\Index.cshtml" />
     <Content Include="Views\CustomError\InternalServerError.cshtml" />
     <Content Include="Views\CustomError\UnspecifiedError.cshtml" />
+    <Content Include="Views\Friend\FriendRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Start\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

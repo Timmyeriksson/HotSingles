@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class LanguageController : Controller
+    public class LanguageController : StartController
     {
         // GET: Language
         public ActionResult Index()

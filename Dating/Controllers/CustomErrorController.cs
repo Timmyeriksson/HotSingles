@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Dating.Controllers
 {
-    public class CustomErrorController : Controller
+    public class CustomErrorController : StartController
     {
         // GET: CustomError
         public ActionResult Index()
