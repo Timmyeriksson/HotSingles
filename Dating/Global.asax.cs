@@ -18,10 +18,11 @@ namespace Dating
         {
             Database.SetInitializer(new DropCreate());
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

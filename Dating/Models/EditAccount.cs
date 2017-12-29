@@ -8,7 +8,7 @@ namespace Dating.Models
 {
     public class EditEmail
     {
-
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -17,7 +17,7 @@ namespace Dating.Models
 
     public class EditPassword
     {
-
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -40,6 +40,7 @@ namespace Dating.Models
 
     public class EditProfilePic
     {
+        [Required]
         [Display(Name = "Profile Picture")]
         public string ProfileURL { get; set; }
     }

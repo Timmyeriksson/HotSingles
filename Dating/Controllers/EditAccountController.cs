@@ -23,11 +23,15 @@ namespace Dating.Controllers
             {
                 using (Datacontext db = new Datacontext())
                 {
-                    var id = int.Parse(Session["UserID"].ToString());
-                    var usr = db.Users.Single(u => u.Id == id);
-                    usr.Email = edit.mailen.Email;
+                    if (edit.mailen.Email != null)
+                    {
+                        var id = int.Parse(Session["UserID"].ToString());
+                        var usr = db.Users.Single(u => u.Id == id);
+                        usr.Email = edit.mailen.Email;
 
-                    db.SaveChanges();
+                        db.SaveChanges();
+                    }
+
                 }
             }
             catch
@@ -45,11 +49,15 @@ namespace Dating.Controllers
             {
                 using (Datacontext db = new Datacontext())
                 {
-                    var id = int.Parse(Session["UserID"].ToString());
-                    var usr = db.Users.Single(u => u.Id == id);
-                    usr.Password = edit.Password.Password;
+                    if (edit.Password.Password != null)
+                    {
+                        var id = int.Parse(Session["UserID"].ToString());
+                        var usr = db.Users.Single(u => u.Id == id);
+                        usr.Password = edit.Password.Password;
 
-                    db.SaveChanges();
+                        db.SaveChanges();
+                    }
+
                 }
             }
             catch
@@ -89,11 +97,15 @@ namespace Dating.Controllers
             {
                 using (Datacontext db = new Datacontext())
                 {
-                    var id = int.Parse(Session["UserID"].ToString());
-                    var usr = db.Users.Single(u => u.Id == id);
-                    usr.Age = edit.Age.Age;
+                    if (edit.Age != null)
+                    {
+                        var id = int.Parse(Session["UserID"].ToString());
+                        var usr = db.Users.Single(u => u.Id == id);
+                        usr.Age = edit.Age.Age;
 
-                    db.SaveChanges();
+                        db.SaveChanges();
+                    }
+
                 }
             }
             catch
@@ -113,7 +125,7 @@ namespace Dating.Controllers
                 {
                     var id = int.Parse(Session["UserID"].ToString());
                     var usr = db.Users.Single(u => u.Id == id);
-                    if (edit.ProfileURL.ProfileURL.EndsWith(".jpg") || edit.ProfileURL.ProfileURL.EndsWith(".png") || edit.ProfileURL.ProfileURL.EndsWith(".img"))
+                    if ((edit.ProfileURL.ProfileURL.EndsWith(".jpg") || edit.ProfileURL.ProfileURL.EndsWith(".png") || edit.ProfileURL.ProfileURL.EndsWith(".img")) && edit.ProfileURL.ProfileURL != null)
                     {
                         usr.PictureURL = edit.ProfileURL.ProfileURL;
                     }

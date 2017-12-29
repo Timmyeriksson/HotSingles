@@ -20,7 +20,7 @@ namespace Dating.Controllers
                 {
 
                     var list = new List<User>();
-                    var randomUser = db.Users.OrderBy(x => Guid.NewGuid()).ToList();
+                    var randomUser = db.Users.Where(x => x.Searchable == true).OrderBy(x => Guid.NewGuid()).ToList();
 
                     list.Add(randomUser[0]);
                     list.Add(randomUser[1]);

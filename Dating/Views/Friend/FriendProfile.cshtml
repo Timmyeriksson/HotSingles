@@ -5,12 +5,12 @@
     string profilepictureUrl = "";
     profilepictureUrl = Model.PictureURL;
     bool IsFriends = ViewBag.IsFriends;
-    int Sender = Convert.ToInt32(Session["USER_ID"]);
+    int Sender = Convert.ToInt32(Session["UserID"]);
     int Reciever = ViewBag.ProfilID;
 }
 
 
-@*<script>
+<script>
         //Skickar JSON-data till API-Controllern för att lägga till en post.
         function addPost() {
             var TextContent = $('#TextContent').val();
@@ -30,9 +30,9 @@
                 }
             });
             };
-    </script>*@
+    </script>
 
-<script src="~/Scripts/AddPost.js"></script>
+@*<script src="~/Scripts/AddPost.js"></script>*@
 
 
 
