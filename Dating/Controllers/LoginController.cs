@@ -51,8 +51,23 @@ namespace Dating.Controllers
         {
             using (Datacontext db = new Datacontext())
             {
-                var id = int.Parse(Session["UserID"].ToString());
+                var id = Convert.ToInt32(Session["UserID"]);
                 var usr = db.Users.Single(u => u.Id == id);
+                var listPost = new PostController().OldPosts(id);
+                var TotalContentList = new List<string[]>();
+                foreach (Posts post in listPost)
+                {
+                    User Sender = db.Users.Find(post.SenderID);
+                    string name = Sender.Firstname + " " + Sender.Lastname;
+                    string[] totalContentArray = new string[2] { name, post.TextContent };
+                    TotalContentList.Add(totalContentArray);
+                }
+                User user = db.Users.Find(id);
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+                ViewBag.PostsForUser = TotalContentList;
                 return View(usr);
             }
         }

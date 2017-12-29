@@ -40,20 +40,6 @@ namespace Dating.Controllers
 
         }
 
-        //test för att anropa klassen från scriptet
-        [HttpGet, ActionName("test")]
-        public string test(int id)
-        {
-            return id.ToString();
-
-        }
-
-        //test för att anropa klassen från scriptet
-        public HttpResponseMessage Post([FromBody] Posts newPost)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK);
-        }
-
     }
 }
 

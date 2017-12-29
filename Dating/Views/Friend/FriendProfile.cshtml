@@ -6,7 +6,7 @@
     profilepictureUrl = Model.PictureURL;
     bool IsFriends = ViewBag.IsFriends;
     int Sender = Convert.ToInt32(Session["UserID"]);
-    int Reciever = ViewBag.ProfilID;
+    int Reciever = ViewBag.ProfilId;
 }
 
 
@@ -14,9 +14,9 @@
         //Skickar JSON-data till API-Controllern för att lägga till en post.
         function addPost() {
             var TextContent = $('#TextContent').val();
-            var SenderID = @Sender;
-            var RecieverID = @Reciever;
-            var newPost = { SenderID: SenderID, RecieverID: RecieverID, TextContent: TextContent};
+            var Sender = @Sender;
+            var Reciever = @Reciever;
+            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent};
             $.ajax({
                 type: 'POST',
                 url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
@@ -30,7 +30,7 @@
                 }
             });
             };
-    </script>
+</script>
 
 @*<script src="~/Scripts/AddPost.js"></script>*@
 
@@ -98,18 +98,18 @@
             <button onclick="addPost()">Skicka inlägg</button>
         </div>
         <br />
-        @*<div class="walldiv">
-                Inlägg:
-                <ul id="postlist">
-                    @foreach (var posts in ViewBag.list)
-                    {
-                        <li>
-                            <B>@posts[0]</B>
-                            <br />
-                            @posts[1]
-                        </li>
-                    }
-                </ul>
-            </div>*@
+        <div class="walldiv">
+            Inlägg:
+            <ul id="postlist">
+                @foreach (var posts in ViewBag.PostsForUser)
+                {
+                    <li>
+                        <B>@posts[0]</B>
+                        <br />
+                        @posts[1]
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
 </div>

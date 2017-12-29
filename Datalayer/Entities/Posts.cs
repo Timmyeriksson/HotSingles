@@ -10,9 +10,9 @@ namespace Datalayer.Entities
     {
         public virtual int ID { get; set; }
 
-        public virtual int SenderID { get; set; }
+        public int SenderID { get; set; }
 
-        public virtual int ReciverID { get; set; }
+        public int ReciverID { get; set; }
 
         public virtual string TextContent { get; set; }
     }

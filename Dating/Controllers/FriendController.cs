@@ -76,6 +76,15 @@ namespace Dating.Controllers
 
                     using (Datacontext db = new Datacontext())
                     {
+                        var listPost = new PostController().OldPosts(userid);
+                        var TotalContentList = new List<string[]>();
+                        foreach (Posts post in listPost)
+                        {
+                            User Sender = db.Users.Find(post.SenderID);
+                            string name = Sender.Firstname + " " + Sender.Lastname;
+                            string[] totalContentArray = new string[2] { name, post.TextContent };
+                            TotalContentList.Add(totalContentArray);
+                        }
                         User user = db.Users.Find(id);
                         if (user == null)
                         {
@@ -87,6 +96,7 @@ namespace Dating.Controllers
                             ViewBag.IsFriends = true;
                         }
                         ViewBag.ProfilId = userid;
+                        ViewBag.PostsForUser = TotalContentList;
                         return View(user);
                     }
                 }

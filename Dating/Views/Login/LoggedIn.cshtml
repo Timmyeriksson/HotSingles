@@ -3,7 +3,30 @@
 @{
     string profilepictureurl = "";
     profilepictureurl = Model.PictureURL;
+    int Sender = Convert.ToInt32(Session["UserID"]);
 }
+
+<script>
+        //Skickar JSON-data till API-Controllern för att lägga till en post.
+        function addPost() {
+            var TextContent = $('#TextContent').val();
+            var Sender = @Sender;
+            var Reciever = @Sender;
+            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent};
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
+                data: JSON.stringify(newPost),
+                contentType: 'application/json',
+                datatype: 'json',
+                success: function (data) {
+                    $('#TextContent').val('');
+                    //Refreshar sidan efter lyckat inlägg.
+                    location.reload();
+                }
+            });
+            };
+</script>
 
 <h2>My Profile</h2>
 <div class="profilecontainer">
@@ -52,27 +75,27 @@
         </dl>
 
     </div>
-    @*<div class="wallcontainer">
-            <div class="walldiv">
-                Skriv ett inlägg:
-                <br />
-                <textarea id="Content" rows="3" cols="500"></textarea><br />
-                <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
-            </div>
+    <div class="wallcontainer">
+        <div class="walldiv">
+            Skriv ett inlägg:
             <br />
-            <div class="walldiv">
-                Inlägg:
-                <ul>
-                    @foreach (var post in ViewBag.list)
-                    {
-                        <li>
-                            <B>@post[0]</B>
-                            <br />
-                            @post[1]
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>*@
+            <textarea id="TextContent" rows="3" cols="500"></textarea><br />
+            <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
+        </div>
+        <br />
+        <div class="walldiv">
+            Inlägg:
+            <ul>
+                @foreach (var post in ViewBag.PostsForUser)
+                {
+                    <li>
+                        <B>@post[0]</B>
+                        <br />
+                        @post[1]
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 </div>
 
