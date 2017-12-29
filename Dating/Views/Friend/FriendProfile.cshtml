@@ -5,8 +5,34 @@
     string profilepictureUrl = "";
     profilepictureUrl = Model.PictureURL;
     bool IsFriends = ViewBag.IsFriends;
-
+    int Sender = Convert.ToInt32(Session["USER_ID"]);
+    int Reciever = ViewBag.ProfilID;
 }
+
+
+@*<script>
+        //Skickar JSON-data till API-Controllern för att lägga till en post.
+        function addPost() {
+            var TextContent = $('#TextContent').val();
+            var SenderID = @Sender;
+            var RecieverID = @Reciever;
+            var newPost = { SenderID: SenderID, RecieverID: RecieverID, TextContent: TextContent};
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
+                data: JSON.stringify(newPost),
+                contentType: 'application/json',
+                datatype: 'json',
+                success: function (data) {
+                    $('#TextContent').val('');
+                    //Refreshar sidan efter lyckat inlägg.
+                    location.reload();
+                }
+            });
+            };
+    </script>*@
+
+<script src="~/Scripts/AddPost.js"></script>
 
 
 
@@ -61,5 +87,29 @@
         {
             @Html.ActionLink("Add friend", "AddFriend", new { id = Model.Id }, null)
         }
+    </div>
+
+    <div class="wallcontainer">
+        <div class="walldiv">
+            Skriv ett inlägg:
+            <br />
+            <textarea id="TextContent" rows="3" cols="500"></textarea><br />
+            @*<input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />*@
+            <button onclick="addPost()">Skicka inlägg</button>
+        </div>
+        <br />
+        @*<div class="walldiv">
+                Inlägg:
+                <ul id="postlist">
+                    @foreach (var posts in ViewBag.list)
+                    {
+                        <li>
+                            <B>@posts[0]</B>
+                            <br />
+                            @posts[1]
+                        </li>
+                    }
+                </ul>
+            </div>*@
     </div>
 </div>

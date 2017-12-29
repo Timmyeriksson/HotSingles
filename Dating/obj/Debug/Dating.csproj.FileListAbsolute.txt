@@ -669,3 +669,14 @@ C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Nav
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.sv.resources
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csproj.GenerateResource.Cache
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\obj\Debug\sv\Dating.resources.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.resources
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.sv.resources
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csproj.GenerateResource.Cache
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\sv\Dating.resources.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Net.Http.Formatting.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.dll
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Net.Http.Formatting.xml
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.xml
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.xml
+C:\Users\Oscar\Documents\GitHub\HotSingles\Dating\obj\Debug\sv\Dating.resources.dll
