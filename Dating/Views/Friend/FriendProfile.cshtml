@@ -39,10 +39,10 @@
 
 <h2>@Model.Firstname @Model.Lastname</h2>
 <div class="profilecontainer">
-    <div class="wallcontainer2">
+    <div class="wallcontainer2 col-md-4">
         <dl class="dl-horizontal">
             <dd>
-                <img src=@profilepictureUrl width="150" height="150" />
+                <img class="img-responsive img-rounded profilepic" src=@profilepictureUrl />
             </dd>
             <dt>
                 @Html.LabelFor(model => model.Firstname, "Firstname:")
@@ -82,22 +82,19 @@
                 @Html.DisplayFor(model => model.About)
             </dd>
         </dl>
-        @if (IsFriends == false)
-        {
-            @Html.ActionLink("Add friend", "AddFriend", new { id = Model.Id }, null)
-        }
     </div>
 
-    <div class="wallcontainer">
+    <div class="wallcontainer col-md-4">
         <div class="walldiv">
-            Skriv ett inlägg:
+            <h3>Wall</h3>
+
             <br />
-            <textarea id="TextContent" rows="3" cols="500"></textarea><br />
-            <button onclick="addPost()">Skicka inlägg</button>
+            <textarea id="TextContent" rows="5" cols="500"></textarea><br />
+            <button onclick="addPost()">Post</button>
+
         </div>
         <br />
         <div class="walldiv">
-            Inlägg:
             <ul id="postlist">
                 @foreach (var posts in ViewBag.PostsForUser)
                 {
@@ -109,5 +106,12 @@
                 }
             </ul>
         </div>
+
+    </div>
+    <div class="col-md-4">
+        @if (IsFriends == false)
+        {<h4>Wanna get to know @Model.Firstname on a new level? Send a friendrequest!</h4>
+        <button onclick="location.href='@Url.Action("AddFriend", new { id = Model.Id })'">Send friendrequest</button>
+    }
     </div>
 </div>

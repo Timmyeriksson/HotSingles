@@ -34,10 +34,10 @@
 
 <h2>My Profile</h2>
 <div class="profilecontainer">
-    <div class="wallcontainer2">
+    <div class="wallcontainer2 col-md-4">
         <dl class="dl-horizontal">
             <dd>
-                <img src=@profilepictureurl width="150" height="150" />
+                <img class="img-responsive img-rounded profilepic" src=@profilepictureurl />
             </dd>
             <dt>
                 @Html.LabelFor(model => model.Firstname, "Firstname:")
@@ -79,16 +79,15 @@
         </dl>
 
     </div>
-    <div class="wallcontainer">
+    <div class="wallcontainer col-md-8">
         <div class="walldiv">
-            Skriv ett inlägg:
+            <h3>Wall</h3>
             <br />
-            <textarea id="TextContent" rows="3" cols="500"></textarea><br />
-            <input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />
+            <textarea id="TextContent" rows="5" cols="500"></textarea><br />
+            <input id="Button1" type="button" value="Post" onclick="addPost()" />
         </div>
         <br />
         <div class="walldiv">
-            Inlägg:
             <ul>
                 @foreach (var post in ViewBag.PostsForUser)
                 {
@@ -102,4 +101,3 @@
         </div>
     </div>
 </div>
-

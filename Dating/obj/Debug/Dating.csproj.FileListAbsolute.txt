@@ -686,3 +686,14 @@ C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.dl
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\bin\System.Net.Http.Formatting.xml
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.xml
 C:\Users\Timmy\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\sv\Dating.resources.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Net.Http.Formatting.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.dll
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Net.Http.Formatting.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\bin\System.Web.Http.WebHost.xml
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.resources
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.Resources.Navbar.sv.resources
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\obj\Debug\Dating.csproj.GenerateResource.Cache
+C:\Users\Ola Vognild\Documents\GitHub\HotSingles\Dating\obj\Debug\sv\Dating.resources.dll
