@@ -14,10 +14,12 @@ namespace Dating.Models
         public string Email { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed")]
         [Display(Name = "Firstname")]
         public string Firstname { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed")]
         [Display(Name = "Lastname")]
         public string Lastname { get; set; }
 
