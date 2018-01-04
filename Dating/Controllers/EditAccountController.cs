@@ -10,7 +10,6 @@ namespace Dating.Controllers
 {
     public class EditAccountController : StartController
     {
-        // GET: EditAccount
         public ActionResult EditAccount()
         {
             return View();

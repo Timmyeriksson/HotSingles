@@ -10,7 +10,6 @@ namespace Dating.Controllers
 {
     public class SearchController : StartController
     {
-        // GET: Search
 
         public ActionResult Search(string searchString)
         {
@@ -21,6 +20,7 @@ namespace Dating.Controllers
                 {
                     var userList = new List<User>();
 
+                    //Tar ut alla sökbara användare ifall man inte valt att skicka in en sträng
                     if (searchString == null)
                     {
                         var searchabletrue = from m in db.Users
@@ -31,6 +31,7 @@ namespace Dating.Controllers
                             userList.Add(user);
                         }
                     }
+                    //Annars matchar man sökbara med söksträng
                     else
                     {
                         var searchabletrue = from m in db.Users
@@ -38,7 +39,7 @@ namespace Dating.Controllers
                                              && (m.Firstname.Contains(searchString)
                                              || m.Lastname.Contains(searchString))
                                              select m;
-
+                        //Lägger till användarna i en lista som vi sedan presenterar
                         foreach (User user in searchabletrue)
                         {
                             userList.Add(user);

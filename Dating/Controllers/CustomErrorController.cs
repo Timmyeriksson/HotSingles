@@ -8,7 +8,6 @@ namespace Dating.Controllers
 {
     public class CustomErrorController : StartController
     {
-        // GET: CustomError
         public ActionResult Index()
         {
             return View();

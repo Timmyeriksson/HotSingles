@@ -51,6 +51,7 @@ namespace Dating.Models
         public bool Searchable { get; set; }
     }
 
+    //Eftersom vi har en knapp för varje edit så har vi en editwrapper där vi bryter ut varje edit
     public class editwrapper
     {
         public EditEmail mailen { get; set; }

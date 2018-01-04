@@ -12,7 +12,6 @@ namespace Dating.Controllers
         private Repository databas = new Repository();
 
 
-        // GET: RegisterAccount
         public ActionResult RegisterAccount()
         {
 

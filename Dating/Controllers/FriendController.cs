@@ -10,15 +10,10 @@ namespace Dating.Controllers
 {
     public class FriendController : StartController
     {
-
-        // GET: Friend
         public ActionResult Index()
         {
             return View();
         }
-
-        // GET: Friend
-
 
         public ActionResult Friends()
         {
@@ -29,6 +24,7 @@ namespace Dating.Controllers
                 {
                     var AllFriendConnections = db.Friends.ToList();
                     var AcceptedFriendsList = new List<Friend>();
+                    //Tar endast ut de vänkopplingar i databasen som är accepterade
                     foreach (Friend friend in AllFriendConnections)
                     {
                         if (friend.Accepted == true)
@@ -39,7 +35,7 @@ namespace Dating.Controllers
                     var MyAcceptedFriendsAsUsers = new List<User>();
 
                     var UserList = db.Users.ToList();
-
+                    //Matchar så att det endast visar inloggade användarens vänner
                     foreach (User user in UserList)
                     {
                         foreach (Friend friend in AcceptedFriendsList)
@@ -71,13 +67,11 @@ namespace Dating.Controllers
                 }
                 else
                 {
-
-
-
                     using (Datacontext db = new Datacontext())
                     {
                         var listPost = new PostController().OldPosts(userid);
                         var TotalContentList = new List<string[]>();
+                        //Bygger ihop postsen med innehåll och tillhörande sändare
                         foreach (Posts post in listPost)
                         {
                             User Sender = db.Users.Find(post.SenderID);
@@ -146,6 +140,7 @@ namespace Dating.Controllers
                 {
                     var AllFriendConnections = db.Friends.ToList();
                     var PendingFriends = new List<Friend>();
+                    //Tar alla vänkopplingar som inte är accepterade
                     foreach (Friend friend in AllFriendConnections)
                     {
                         if (friend.Accepted == false)
@@ -156,7 +151,7 @@ namespace Dating.Controllers
                     var PendingForUser = new List<User>();
 
                     var UserList = db.Users.ToList();
-
+                    //Matchar dessa icke-accepterade med inloggarens id
                     foreach (User user in UserList)
                     {
                         foreach (Friend friend in PendingFriends)

@@ -16,17 +16,9 @@ namespace Datalayer.repository
             datacontext.Users.Add(user);
         }
 
-        public void addFriend(Friend friend)
-        {
-            datacontext.Friends.Add(friend);
-        }
-
         public void saveUser()
         {
             datacontext.SaveChanges();
         }
-
-
-
     }
 }

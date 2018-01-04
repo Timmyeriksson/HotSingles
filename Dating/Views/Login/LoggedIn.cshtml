@@ -12,20 +12,24 @@
             var TextContent = $('#TextContent').val();
             var Sender = @Sender;
             var Reciever = @Sender;
-            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent};
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
-                data: JSON.stringify(newPost),
-                contentType: 'application/json',
-                datatype: 'json',
-                success: function (data) {
-                    $('#TextContent').val('');
-                    //Refreshar sidan efter lyckat inlägg.
-                    location.reload();
-                }
-            });
-            };
+            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent };
+            if (TextContent == null || TextContent == "") {
+                alert("You must enter a message!")
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
+                    data: JSON.stringify(newPost),
+                    contentType: 'application/json',
+                    datatype: 'json',
+                    success: function (data) {
+                        $('#TextContent').val('');
+                        //Refreshar sidan efter lyckat inlägg.
+                        location.reload();
+                    }
+                });
+            }
+    };
 </script>
 
 <h2>My Profile</h2>

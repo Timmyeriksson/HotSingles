@@ -12,6 +12,7 @@ namespace Dating.Controllers
     {
         private Datacontext db = new Datacontext();
 
+        //Denna magiska controller gör att vi kan skicka viewbag med antal vänförfrågningar oavsett var på hemsidan vi är. Alla andra controllers ärver av denna och denna i sin tur ärver av Controller
         public StartController()
         {
             List<Friend> PendingFriends = new List<Friend>();

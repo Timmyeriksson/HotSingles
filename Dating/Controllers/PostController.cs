@@ -35,11 +35,12 @@ namespace Dating.Controllers
         [HttpPost, ActionName("insertPost")]
         public void insertPost([FromBody] Posts newPost)
         {
-            db.Post.Add(newPost);
-            db.SaveChanges();
-
+            if (newPost.TextContent != "")
+            {
+                db.Post.Add(newPost);
+                db.SaveChanges();
+            }
         }
-
     }
 }
 

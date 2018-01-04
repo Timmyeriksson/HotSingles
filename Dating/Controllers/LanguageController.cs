@@ -10,7 +10,6 @@ namespace Dating.Controllers
 {
     public class LanguageController : StartController
     {
-        // GET: Language
         public ActionResult Index()
         {
             return View();

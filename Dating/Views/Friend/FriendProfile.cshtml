@@ -16,26 +16,25 @@
             var TextContent = $('#TextContent').val();
             var Sender = @Sender;
             var Reciever = @Reciever;
-            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent};
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
-                data: JSON.stringify(newPost),
-                contentType: 'application/json',
-                datatype: 'json',
-                success: function (data) {
-                    $('#TextContent').val('');
-                    //Refreshar sidan efter lyckat inlägg.
-                    location.reload();
-                }
-            });
+            var newPost = { SenderID: Sender, ReciverID: Reciever, TextContent: TextContent };
+            if (TextContent == null || TextContent == "") {
+                alert("You must enter a message!")
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("insertPost", "Post", new { httproute = "" })',
+                    data: JSON.stringify(newPost),
+                    contentType: 'application/json',
+                    datatype: 'json',
+                    success: function (data) {
+                        $('#TextContent').val('');
+                        //Refreshar sidan efter lyckat inlägg.
+                        location.reload();
+                    }
+                });
+            }
             };
 </script>
-
-@*<script src="~/Scripts/AddPost.js"></script>*@
-
-
-
 
 
 <h2>@Model.Firstname @Model.Lastname</h2>
@@ -94,7 +93,6 @@
             Skriv ett inlägg:
             <br />
             <textarea id="TextContent" rows="3" cols="500"></textarea><br />
-            @*<input id="Button1" type="button" value="Skicka inlägg" onclick="addPost()" />*@
             <button onclick="addPost()">Skicka inlägg</button>
         </div>
         <br />
