@@ -7,17 +7,17 @@ namespace Datalayer.Repository
     {
         protected override void Seed(Datacontext context)
         {
-            var illidan = new User { Firstname = "Illidan", Lastname = "Stormrage", Email = "illidan@mail.se", Password = "Illidan1", Age = 32, About = "I AM PREPARED", Gender = "Male", Searchable = true, PictureURL = "https://cdn.blizzardwatch.com/wp-content/uploads/2015/08/illidan-stormrage_demon_wow_art.jpg" };
-            var slowpoke = new User { Firstname = "Slowpoke", Lastname = "Slow", Email = "slowpoke@mail.se", Password = "Slowpoke1", Age = 32, About = "Hi! I am very slow", Gender = "Male", Searchable = true, PictureURL = "http://i0.kym-cdn.com/entries/icons/facebook/000/000/128/slowpoke.jpg" };
-            var jocke = new User { Firstname = "Jocke", Lastname = "Kniv", Email = "jocke@mail.se", Password = "Jocke1", Age = 32, About = "Jag gillar hästar", Gender = "Male", Searchable = true, PictureURL = "https://liberyx.files.wordpress.com/2015/02/jocke_med_kniven.jpg" };
-            var Kungen = new User { Firstname = "Kungen", Lastname = "Knug", Email = "kungen@mail.se", Password = "Kungen1", Age = 22, About = "Mitt namn är Kungen men jag är ingen kung för jag är inte tung", Gender = "Other", Searchable = false, PictureURL = "https://pbs.twimg.com/profile_images/2207614930/kungen_back_400x400.jpg" };
-            var Timmy = new User { Firstname = "Timmy", Lastname = "Rullstol", Email = "timmy@hotmail.com", Password = "timmy1", Age = 45, About = "Åker rullstol", Gender = "Woman", Searchable = true, PictureURL = "https://vignette.wikia.nocookie.net/southpark/images/0/0b/62a.jpg/revision/latest/scale-to-width-down/310?cb=20100827140143" };
+            var bamse = new User { Firstname = "Bamse", Lastname = "Dunderhonung", Email = "bamse@mail.se", Password = "Bamse1", Age = 32, About = "I like to eat my honey", Gender = "Male", Searchable = true, PictureURL = "https://www.bamse.se/wp-content/uploads/Bamse.jpg" };
+            var kalle = new User { Firstname = "Kalle", Lastname = "Anka", Email = "kalle@mail.se", Password = "Kalle1", Age = 42, About = "My name is Kalle Anka, and I am a duck without pants", Gender = "Male", Searchable = true, PictureURL = "https://vignette.wikia.nocookie.net/kalleankasverige/images/b/b5/Kalle_anka.gif/revision/latest?cb=20130719090853&path-prefix=sv" };
+            var fiona = new User { Firstname = "Fiona", Lastname = "of Far, far, away", Email = "fiona@mail.se", Password = "Fiona1", Age = 24, About = "Once I was turned into an ogre. BEST. DAY. EVER.", Gender = "Female", Searchable = true, PictureURL = "https://orig00.deviantart.net/4c8b/f/2016/137/0/f/princess_fiona_ogre_by_shrek_is_death-da2usgi.jpg" };
+            var shrek = new User { Firstname = "Shrek", Lastname = "the Ogre", Email = "shrek@mail.se", Password = "Shrek1", Age = 56, About = "I am a big ogre! How about them apples?", Gender = "Male", Searchable = true, PictureURL = "https://vignette.wikia.nocookie.net/its-always-veggie-bone-lebowski-party-knuckles/images/1/1f/Shrek-0.jpg/revision/latest?cb=20170328013347" };
+            var walle = new User { Firstname = "Wall", Lastname = "E", Email = "walle@mail.se", Password = "Walle1", Age = 89, About = "Bip bop bepilo bop biiip", Gender = "Other", Searchable = false, PictureURL = "https://vignette.wikia.nocookie.net/disney/images/2/2b/Wall-E.png/revision/latest?cb=20151002192237" };
 
-            context.Users.Add(jocke);
-            context.Users.Add(slowpoke);
-            context.Users.Add(illidan);
-            context.Users.Add(Kungen);
-            context.Users.Add(Timmy);
+            context.Users.Add(bamse);
+            context.Users.Add(kalle);
+            context.Users.Add(fiona);
+            context.Users.Add(shrek);
+            context.Users.Add(walle);
 
             context.SaveChanges();
             base.Seed(context);
